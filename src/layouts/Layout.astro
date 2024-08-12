@@ -1,0 +1,69 @@
+---
+import "@fontsource-variable/lexend-deca";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
+
+// import Footer from "../sections/Footer.astro";
+// import Header from "../sections/Header.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body
+		class="overflow-x-hidden selection:bg-p-midnight-green selection:text-white [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-p-midnight-green"
+	>
+		<!-- <Header /> -->
+
+		<div
+			class="mx-auto min-h-screen selection:bg-p-midnight-green selection:text-s-dark-green"
+			id="main-content"
+		>
+			<main>
+				<slot />
+			</main>
+		</div>
+
+		<!-- <Footer /> -->
+	</body>
+</html>
+<style is:global>
+	:root {
+		--primary: #fcb72b;
+		--primary-light: #fff4df;
+		--secondary: #2f3b59;
+		--dark-first: #495567;
+		--dark-second: #939caa;
+		--light-first: #e5ecf4;
+		--light-second: #f2f5f9;
+	}
+
+	html {
+		background-color: #fff;
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

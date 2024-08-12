@@ -1,0 +1,52 @@
+{
+  "colors": [
+    {
+      "id": "0001",
+      "name": "Yellow",
+      "idTailwind": "bg-primary-100",
+      "hex": "#FCB72B",
+      "rgb": "rgb(252, 183, 43)",
+      "hsl": "hsl(40°, 97%, 58%)"
+    },
+    {
+      "id": "0002",
+      "name": "Dark Navy",
+      "idTailwind": "bg-dark-100",
+      "hex": "#495567",
+      "rgb": "rgb(73, 85, 103)",
+      "hsl": "hsl(216°, 17%, 35%)"
+    },
+    {
+      "id": "0003",
+      "name": "",
+      "idTailwind": "bg-dark-200",
+      "hex": "",
+      "rgb": "",
+      "hsl": ""
+    },
+    {
+      "id": "0004",
+      "name": "",
+      "idTailwind": "bg-light-100",
+      "hex": "",
+      "rgb": "",
+      "hsl": ""
+    },
+    {
+      "id": "0005",
+      "idTailwind": "bg-light-200",
+      "name": "",
+      "hex": "",
+      "rgb": "",
+      "hsl": ""
+    },
+    {
+      "id": "0006",
+      "name": "",
+      "idTailwind": "bg-primary-200",
+      "hex": "",
+      "rgb": "",
+      "hsl": ""
+    }
+  ]
+}

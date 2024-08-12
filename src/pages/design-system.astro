@@ -1,0 +1,226 @@
+---
+import Logo from "../components/icons/Logo.astro";
+import Layout from "../layouts/Layout.astro";
+import colorsData from "../data/designSystem.json";
+
+const hasColors = colorsData?.colors;
+const colorsDesign = hasColors ? hasColors : [];
+---
+
+<Layout title="Design System">
+  <!-- Hero -->
+  <section class="relative bg-secondary-100">
+    <article
+      class="relative min-h-[200px] flex items-center justify-start max-w-4xl mx-auto py-10 z-10"
+    >
+      <header class="text-white px-5">
+        <div class="title-intro-page">
+          <Logo class="h-4 opacity-50" />
+
+          <h1 class="font-mono font-bold text-header">Design System</h1>
+        </div>
+      </header>
+    </article>
+
+    <div class="absolute top-0 bottom-0 -right-8 w-auto z-10">
+      <div class="flex items-center justify-center gap-x-4 h-full">
+        <div
+          class="w-16 h-16 rounded-full border-4 border-white bg-transparent"
+        >
+        </div>
+        <div
+          class="w-16 h-16 rounded-full border-4 border-white bg-transparent"
+        >
+        </div>
+        <div class="w-16 h-16 rounded-full border-4 border-white bg-white">
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="absolute inset-0 bg-cover bg-repeat-x z-0"
+      style="background-image: url('/assets/images/hero/design-system-hero-desktop.png');"
+    >
+    </div>
+    <div class="absolute inset-0 bg-secondary-100/75 z-0"></div>
+  </section>
+
+  <!-- Design -->
+  <section class="py-28">
+    <div class="max-w-4xl mx-auto px-5">
+      <article class="mb-130">
+        <header class="mb-10">
+          <h2 class="text-dark-100 font-mono font-bold text-5xl">
+            <span class="mr-3 font-normal text-primary-100">01</span>Colors
+          </h2>
+        </header>
+
+        <div class="colors-group py-6">
+          <ul class="flex flex-wrap gap-x-3 gap-y-16">
+            {
+              colorsDesign.map(({ id, name, hex, rgb, hsl, idTailwind }) => {
+                return (
+                  <li class="relative min-w-44">
+                    <div
+                      class:list={[
+                        "w-24 h-24 mb-6 rounded-full",
+                        idTailwind === "bg-primary-100" ? "bg-primary-100" : "",
+                        idTailwind === "bg-primary-200" ? "bg-primary-200" : "",
+                        idTailwind === "bg-dark-100" ? "bg-dark-100" : "",
+                        idTailwind === "bg-dark-200" ? "bg-dark-200" : "",
+                        idTailwind === "bg-light-100" ? "bg-light-100" : "",
+                        idTailwind === "bg-light-200" ? "bg-light-200" : "",
+                      ]}
+                    />
+                    <h3 class="mb-4 font-mono text-2xl font-bold text-dark-100">
+                      {name || `Color ${id}`}
+                    </h3>
+                    <p class="text-dark-200 ">
+                      HEX : {hex}
+                      <br />
+                      RGB : {rgb}
+                      <br />
+                      HSL : {hsl}
+                    </p>
+                  </li>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </article>
+
+      <article class="mb-130">
+        <header class="mb-10">
+          <h2 class="text-dark-100 font-mono font-bold text-5xl">
+            <span class="mr-3 font-normal text-primary-100">02</span>Typography
+          </h2>
+        </header>
+
+        <div class="font-group py-6 text-dark-200">
+          <h2 class="text-xl font-mono font-bold uppercase tracking-title">
+            Font Family
+          </h2>
+          <hr class="my-8" />
+
+          <div class="grid grid-cols-2 items-start justify-between">
+            <h2 class="text-4xl font-mono font-bold tracking-tighter">
+              Space Mono
+            </h2>
+
+            <div>
+              <p class="text-xl leading-8 font-mono text-dark-100 uppercase">
+                <span class="font-bold">
+                  a b c d e f g h i j k l m n o p q r s t u v w x y z
+                </span>
+                a b c d e f g h i j k l m n o p q r s t u v w x y z !@#$%^&*()
+              </p>
+            </div>
+          </div>
+          <hr class="my-8" />
+
+          <div class="grid grid-cols-2 items-start justify-between">
+            <h2 class="text-4xl font-normal">Lexend Deca</h2>
+
+            <div>
+              <p class="text-xl leading-8 text-dark-100 uppercase">
+                a b c d e f g h i j k l m n o p q r s t u v w x y z a b c d e f
+                g h i j k l m n o p q r s t u v w x y z !@#$%^&*()
+              </p>
+            </div>
+          </div>
+          <hr class="my-8" />
+        </div>
+
+        <div class="font-typography-group grid grid-cols-2 gap-x-4">
+          <div class="text-dark-200 font-mono">
+            <h2 class="mb-11 text-xl font-bold uppercase tracking-title">
+              Headings
+            </h2>
+
+            <div class="flex flex-col gap-y-8">
+              <div>
+                <span class="block mb-2 font-sans"
+                  >H1: 56px : 56px Line : -2.5 Character Spacing</span
+                >
+                <h1 class="text-dark-100 text-6xl tracking-tighter font-bold">
+                  Space Mono Bold
+                </h1>
+              </div>
+
+              <div>
+                <span class="block mb-2 font-sans"
+                  >H2: 48px : 48px Line : -2.14 Character Spacing</span
+                >
+                <h2 class="text-dark-100 text-5xl tracking-tighter font-bold">
+                  Space Mono <br /> Bold
+                </h2>
+              </div>
+
+              <div>
+                <span class="block mb-2 font-sans"
+                  >H3: 40px : 48px Line : -1.79 Character Spacing</span
+                >
+                <h3 class="text-dark-100 text-4xl tracking-tighter font-bold">
+                  Space Mono Bold
+                </h3>
+              </div>
+
+              <div>
+                <span class="block mb-2 font-sans"
+                  >H4: 24px : 28px Line : -1.07 Character Spacing</span
+                >
+                <h4 class="text-dark-100 text-2xl tracking-tighter font-bold">
+                  Space Mono Bold
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-dark-200 font-mono">
+            <h2 class="mb-11 text-xl font-bold uppercase tracking-title">
+              Body
+            </h2>
+
+            <div>
+              <div>
+                <span class="block mb-2 font-sans"
+                  >Body 1: Lexend Deca Regular: 15px : 25px Line</span
+                >
+
+                <p class="text-base font-sans text-dark-100">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In
+                  nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
+                  pretium, ligula sollicitudin laoreet viverra, tortor libero
+                  sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis.
+                  Ut justo. Suspendisse potenti.
+                  <br /><br />
+                  Sed egestas, ante et vulputate volutpat, eros pede semper est,
+                  vitae luctus metus libero eu augue. Morbi purus libero, faucibus
+                  adipiscing, tortor libero sodales leo, eget blandit nunc tortor
+                  eu nibh. Nullam mollis.
+                  <br /><br />
+                  Ut justo. Suspendisse potenti tortor libero sodales leo, eget blandit
+                  nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.commodo
+                  quis, gravida id, est. Sed lectus. Praesent elementum hendrerit
+                  tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a
+                  ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien
+                  ornare nisl. Phasellus pede arcu, dapibus eu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <header class="mb-10">
+          <h2 class="text-dark-100 font-bold font-mono text-5xl">
+            <span class="mr-3 font-normal text-primary-100">03</span>Button
+          </h2>
+        </header>
+      </article>
+    </div>
+  </section>
+</Layout>
