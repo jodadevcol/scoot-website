@@ -1,0 +1,37 @@
+---
+import Logo from "../components/icons/Logo.astro";
+---
+
+<header class="relative">
+  <div
+    class="flex items-center justify-start gap-x-16 max-w-6xl mx-auto px-5 py-6"
+  >
+    <a class="block w-full max-w-28 text-dark-100" href="/">
+      <Logo />
+    </a>
+
+    <nav>
+      <ul class="flex items-center justify-start gap-x-8 text-dark-200">
+        <li class="">
+          <a href="#" class="">
+            <span class="font-mono font-bold">About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <span class="font-mono font-bold">Location</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="">
+            <span class="font-mono font-bold">Carriers</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <a href="#" class="ml-auto py-3 px-10 bg-primary-100">
+      <span class="text-white font-mono font-bold">Get Scootin</span>
+    </a>
+  </div>
+</header>

@@ -1,16 +1,38 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home Scoot">
+	<section class="relative">
+		<article
+			class="flex flex-col justify-center max-w-6xl mx-auto min-h-[80vh] px-10 py-5"
+		>
+			<header class="max-w-[500px] mb-10">
+				<h1 class="text-white text-6xl font-bold">
+					Scooter sharing made simple
+				</h1>
+			</header>
+
+			<div class="max-w-[500px] md:ml-16 lg:ml-24">
+				<div class="mb-10">
+					<p class="text-base font-sans text-white">
+						Scoot takes the hassle out of urban mobility. Our bikes are placed
+						in convenient locations in each of our cities. Use our app to locate
+						the nearest bike, unlock it with a tap, and you’re away!
+					</p>
+				</div>
+
+				<a href="#" class="block w-fit py-3 px-10 bg-primary-100">
+					<span class="text-white font-mono font-bold">Get Scootin</span>
+				</a>
+			</div>
+		</article>
+
+		<div
+			class="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat -z-10"
+			style="background-image: url('/assets/images/hero/home-hero-desktop.png');"
+		>
+		</div>
+		<div class="absolute inset-0 bg-secondary-100/75 -z-10"></div>
+	</section>
+</Layout>
