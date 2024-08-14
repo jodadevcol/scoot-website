@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src, ...props } = Astro.props;
+---
+
+<div
+  class="absolute inset-0 bg-repeat-x z-0"
+  style={`
+    background-image: url('${src}'); 
+    background-size: contain;
+  `}
+  {...props}
+>
+</div>
+<div class="absolute inset-0 bg-secondary-100/75 z-0"></div>
