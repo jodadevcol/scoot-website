@@ -2,12 +2,13 @@
 import HeroOvals from "../components/HeroOvals.astro";
 import HeroPicture from "../components/HeroPicture.astro";
 import Layout from "../layouts/Layout.astro";
+import BaseContainer from "../sections/BaseContainer.astro";
 ---
 
 <Layout title="About">
   <!-- Hero -->
   <section class="relative bg-secondary-100">
-    <div class="relative max-w-6xl mx-auto z-10">
+    <BaseContainer>
       <article class="min-h-[200px] flex items-center justify-start px-5 py-10">
         <header class="text-white">
           <div class="title-intro-page">
@@ -15,12 +16,88 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </header>
       </article>
-    </div>
+    </BaseContainer>
 
-    <HeroOvals numberOvals={3} />
+    <HeroOvals />
     <HeroPicture src="/assets/images/hero/design-system-hero-desktop.png" />
   </section>
 
   <!-- List Benefits -->
-  <section></section>
+  <section>
+    <BaseContainer>
+      <article class="py-32">
+        <ul class="flex flex-col gap-y-32">
+          <li>
+            <article class="flex items-center justify-between">
+              <header class="max-w-[445px]">
+                <h2
+                  class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
+                >
+                  Mobility for the digital era
+                </h2>
+
+                <div>
+                  <p class="text-base font-sans text-dark-200">
+                    Getting around should be simple (and even fun!) for
+                    everyone. We embrace technology to provide low cost, smart
+                    access to scooters at your fingertips.
+                  </p>
+                </div>
+              </header>
+
+              <picture class="relative w-full max-w-[445px] aspect-square">
+                <div class="rounded-full overflow-hidden">
+                  <img
+                    class="w-full object-cover"
+                    src="/assets/images/digital-era.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  class="absolute top-0 bottom-0 left-full w-full lg:ml-12 xl:ml-16 aspect-square rounded-full overflow-hidden bg-light-100"
+                >
+                </div>
+              </picture>
+            </article>
+          </li>
+
+          <li>
+            <article class="flex flex-row-reverse items-center justify-between">
+              <header class="max-w-[445px]">
+                <h2
+                  class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
+                >
+                  Better urban living
+                </h2>
+
+                <div>
+                  <p class="text-base font-sans text-dark-200">
+                    We’re helping connect cities and bring people closer
+                    together. Our scooters are also fully-electric and we offset
+                    the minimal carbon footprint for each ride.
+                  </p>
+                </div>
+              </header>
+
+              <picture class="relative w-full max-w-[445px] aspect-square">
+                <div class="rounded-full overflow-hidden">
+                  <img
+                    class="w-full object-cover"
+                    src="/assets/images/better-living.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <div
+                  class="absolute top-0 bottom-0 right-full w-full lg:mr-12 xl:mr-16 aspect-square rounded-full overflow-hidden bg-light-100"
+                >
+                </div>
+              </picture>
+            </article>
+          </li>
+        </ul>
+      </article>
+    </BaseContainer>
+  </section>
 </Layout>
