@@ -25,7 +25,7 @@ import BaseContainer from "../sections/BaseContainer.astro";
   <!-- List Benefits -->
   <section>
     <BaseContainer>
-      <article class="py-32">
+      <article class="py-16">
         <ul class="flex flex-col gap-y-32">
           <li>
             <article class="flex items-center justify-between">
@@ -97,6 +97,137 @@ import BaseContainer from "../sections/BaseContainer.astro";
             </article>
           </li>
         </ul>
+      </article>
+    </BaseContainer>
+  </section>
+
+  <!-- Our values -->
+  <section>
+    <BaseContainer>
+      <article class="py-16 text-center">
+        <header class="mb-12">
+          <h2 class="text-dark-100 text-5xl font-mono font-bold">Our Values</h2>
+        </header>
+
+        <ul
+          class="grid items-center justify-center gap-8"
+          style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"
+        >
+          <li class="flex flex-col items-center justify-center max-w-[350px]">
+            <div class="relative py-16">
+              <picture
+                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+              >
+                <img
+                  class="w-full object-cover"
+                  src="/assets/images/our-tech.jpg"
+                  alt=""
+                />
+              </picture>
+
+              <span
+                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+              >
+                01
+              </span>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+                Our tech
+              </h4>
+
+              <div>
+                <p class="text-base font-sans text-dark-200">
+                  We’re using cutting edge technology to drive accessible urban
+                  transportation forward. Our fully electric scooters are a joy
+                  to ride!
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="flex flex-col items-center justify-center max-w-[350px]">
+            <div class="relative py-16">
+              <picture
+                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+              >
+                <img
+                  class="w-full object-cover"
+                  src="/assets/images/our-integrity.jpg"
+                  alt=""
+                />
+              </picture>
+
+              <span
+                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+              >
+                02
+              </span>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+                Our tech
+              </h4>
+
+              <div>
+                <p class="text-base font-sans text-dark-200">
+                  We’re using cutting edge technology to drive accessible urban
+                  transportation forward. Our fully electric scooters are a joy
+                  to ride!
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <li class="flex flex-col items-center justify-center max-w-[350px]">
+            <div class="relative py-16">
+              <picture
+                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+              >
+                <img
+                  class="w-full object-cover"
+                  src="/assets/images/our-community.jpg"
+                  alt=""
+                />
+              </picture>
+
+              <span
+                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+              >
+                03
+              </span>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+                Our tech
+              </h4>
+
+              <div>
+                <p class="text-base font-sans text-dark-200">
+                  We’re using cutting edge technology to drive accessible urban
+                  transportation forward. Our fully electric scooters are a joy
+                  to ride!
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </BaseContainer>
+  </section>
+
+  <!-- FQAS -->
+  <section>
+    <BaseContainer>
+      <article>
+        <article class="py-16 text-center">
+          <header class="mb-12">
+            <h2 class="text-dark-100 text-5xl font-mono font-bold">FAQs</h2>
+          </header>
+        </article>
       </article>
     </BaseContainer>
   </section>
