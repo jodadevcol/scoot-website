@@ -1,3 +1,15 @@
-<div class="relative max-w-6xl mx-auto z-10">
-  <slot />
-</div>
+---
+interface Props {
+  sectionClass?: string;
+}
+
+const { sectionClass } = Astro.props;
+---
+
+<section class={`relative ${sectionClass}`}>
+  <div class="relative max-w-6xl mx-auto z-10">
+    <slot />
+  </div>
+
+  <slot name="decotations" />
+</section>

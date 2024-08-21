@@ -1,234 +1,284 @@
 ---
+import Hero from "../components/Hero.astro";
 import HeroOvals from "../components/HeroOvals.astro";
 import HeroPicture from "../components/HeroPicture.astro";
+import Typography from "../components/Typography.astro";
 import Layout from "../layouts/Layout.astro";
 import BaseContainer from "../sections/BaseContainer.astro";
+import Chevron from "../components/icons/Chevron.astro";
 ---
 
 <Layout title="About">
   <!-- Hero -->
-  <section class="relative bg-secondary-100">
-    <BaseContainer>
-      <article class="min-h-[200px] flex items-center justify-start px-5 py-10">
-        <header class="text-white">
-          <div class="title-intro-page">
-            <h1 class="font-mono font-bold text-6xl">About</h1>
-          </div>
-        </header>
-      </article>
-    </BaseContainer>
+  <BaseContainer>
+    <Hero title="About" />
 
-    <HeroOvals />
-    <HeroPicture src="/assets/images/hero/design-system-hero-desktop.png" />
-  </section>
+    <div slot="decotations">
+      <HeroOvals />
+      <HeroPicture src="/assets/images/hero/design-system-hero-desktop.png" />
+    </div>
+  </BaseContainer>
 
   <!-- List Benefits -->
-  <section>
-    <BaseContainer>
-      <article class="py-16">
-        <ul class="flex flex-col gap-y-32">
-          <li>
-            <article class="flex items-center justify-between">
-              <header class="max-w-[445px]">
-                <h2
-                  class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
-                >
-                  Mobility for the digital era
-                </h2>
+  <BaseContainer>
+    <article class="py-16 px-5">
+      <ul class="flex flex-col gap-y-32">
+        <li>
+          <article class="flex items-center justify-between">
+            <header class="max-w-[445px]">
+              <h2
+                class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
+              >
+                Mobility for the digital era
+              </h2>
 
-                <div>
-                  <p class="text-base font-sans text-dark-200">
-                    Getting around should be simple (and even fun!) for
-                    everyone. We embrace technology to provide low cost, smart
-                    access to scooters at your fingertips.
-                  </p>
-                </div>
-              </header>
+              <div>
+                <p class="text-base font-sans text-dark-200">
+                  Getting around should be simple (and even fun!) for everyone.
+                  We embrace technology to provide low cost, smart access to
+                  scooters at your fingertips.
+                </p>
+              </div>
+            </header>
 
-              <picture class="relative w-full max-w-[445px] aspect-square">
-                <div class="rounded-full overflow-hidden">
-                  <img
-                    class="w-full object-cover"
-                    src="/assets/images/digital-era.jpg"
-                    alt=""
-                  />
-                </div>
+            <picture class="relative w-full max-w-[445px] aspect-square">
+              <div class="rounded-full overflow-hidden">
+                <img
+                  class="w-full object-cover"
+                  src="/assets/images/digital-era.jpg"
+                  alt=""
+                />
+              </div>
 
-                <div
-                  class="absolute top-0 bottom-0 left-full w-full lg:ml-12 xl:ml-16 aspect-square rounded-full overflow-hidden bg-light-100"
-                >
-                </div>
-              </picture>
-            </article>
-          </li>
+              <div
+                class="absolute top-0 bottom-0 left-full w-full lg:ml-12 xl:ml-16 aspect-square rounded-full overflow-hidden bg-light-100"
+              >
+              </div>
+            </picture>
+          </article>
+        </li>
 
-          <li>
-            <article class="flex flex-row-reverse items-center justify-between">
-              <header class="max-w-[445px]">
-                <h2
-                  class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
-                >
-                  Better urban living
-                </h2>
+        <li>
+          <article class="flex flex-row-reverse items-center justify-between">
+            <header class="max-w-[445px]">
+              <h2
+                class="mb-6 text-dark-100 font-mono text-5xl tracking-tighter font-bold"
+              >
+                Better urban living
+              </h2>
 
-                <div>
-                  <p class="text-base font-sans text-dark-200">
-                    We’re helping connect cities and bring people closer
-                    together. Our scooters are also fully-electric and we offset
-                    the minimal carbon footprint for each ride.
-                  </p>
-                </div>
-              </header>
+              <div>
+                <p class="text-base font-sans text-dark-200">
+                  We’re helping connect cities and bring people closer together.
+                  Our scooters are also fully-electric and we offset the minimal
+                  carbon footprint for each ride.
+                </p>
+              </div>
+            </header>
 
-              <picture class="relative w-full max-w-[445px] aspect-square">
-                <div class="rounded-full overflow-hidden">
-                  <img
-                    class="w-full object-cover"
-                    src="/assets/images/better-living.jpg"
-                    alt=""
-                  />
-                </div>
+            <picture class="relative w-full max-w-[445px] aspect-square">
+              <div class="rounded-full overflow-hidden">
+                <img
+                  class="w-full object-cover"
+                  src="/assets/images/better-living.jpg"
+                  alt=""
+                />
+              </div>
 
-                <div
-                  class="absolute top-0 bottom-0 right-full w-full lg:mr-12 xl:mr-16 aspect-square rounded-full overflow-hidden bg-light-100"
-                >
-                </div>
-              </picture>
-            </article>
-          </li>
-        </ul>
-      </article>
-    </BaseContainer>
-  </section>
+              <div
+                class="absolute top-0 bottom-0 right-full w-full lg:mr-12 xl:mr-16 aspect-square rounded-full overflow-hidden bg-light-100"
+              >
+              </div>
+            </picture>
+          </article>
+        </li>
+      </ul>
+    </article>
+  </BaseContainer>
 
   <!-- Our values -->
-  <section>
-    <BaseContainer>
-      <article class="py-16 text-center">
-        <header class="mb-12">
-          <h2 class="text-dark-100 text-5xl font-mono font-bold">Our Values</h2>
-        </header>
+  <BaseContainer>
+    <article class="py-16 text-center">
+      <header class="mb-12">
+        <h2 class="text-dark-100 text-5xl font-mono font-bold">Our Values</h2>
+      </header>
 
-        <ul
-          class="grid items-center justify-center gap-8"
-          style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"
-        >
-          <li class="flex flex-col items-center justify-center max-w-[350px]">
-            <div class="relative py-16">
-              <picture
-                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
-              >
-                <img
-                  class="w-full object-cover"
-                  src="/assets/images/our-tech.jpg"
-                  alt=""
-                />
-              </picture>
+      <ul
+        class="grid items-center justify-center gap-8"
+        style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"
+      >
+        <li class="flex flex-col items-center justify-center max-w-[350px]">
+          <div class="relative py-16">
+            <picture
+              class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+            >
+              <img
+                class="w-full object-cover"
+                src="/assets/images/our-tech.jpg"
+                alt=""
+              />
+            </picture>
 
-              <span
-                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
-              >
-                01
-              </span>
+            <span
+              class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+            >
+              01
+            </span>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+              Our tech
+            </h4>
+
+            <div>
+              <p class="text-base font-sans text-dark-200">
+                We’re using cutting edge technology to drive accessible urban
+                transportation forward. Our fully electric scooters are a joy to
+                ride!
+              </p>
             </div>
+          </div>
+        </li>
 
-            <div class="mt-8">
-              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
-                Our tech
-              </h4>
+        <li class="flex flex-col items-center justify-center max-w-[350px]">
+          <div class="relative py-16">
+            <picture
+              class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+            >
+              <img
+                class="w-full object-cover"
+                src="/assets/images/our-integrity.jpg"
+                alt=""
+              />
+            </picture>
 
-              <div>
-                <p class="text-base font-sans text-dark-200">
-                  We’re using cutting edge technology to drive accessible urban
-                  transportation forward. Our fully electric scooters are a joy
-                  to ride!
-                </p>
-              </div>
+            <span
+              class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+            >
+              02
+            </span>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+              Our tech
+            </h4>
+
+            <div>
+              <p class="text-base font-sans text-dark-200">
+                We’re using cutting edge technology to drive accessible urban
+                transportation forward. Our fully electric scooters are a joy to
+                ride!
+              </p>
             </div>
-          </li>
+          </div>
+        </li>
 
-          <li class="flex flex-col items-center justify-center max-w-[350px]">
-            <div class="relative py-16">
-              <picture
-                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
-              >
-                <img
-                  class="w-full object-cover"
-                  src="/assets/images/our-integrity.jpg"
-                  alt=""
-                />
-              </picture>
+        <li class="flex flex-col items-center justify-center max-w-[350px]">
+          <div class="relative py-16">
+            <picture
+              class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
+            >
+              <img
+                class="w-full object-cover"
+                src="/assets/images/our-community.jpg"
+                alt=""
+              />
+            </picture>
 
-              <span
-                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
-              >
-                02
-              </span>
+            <span
+              class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
+            >
+              03
+            </span>
+          </div>
+
+          <div class="mt-8">
+            <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
+              Our tech
+            </h4>
+
+            <div>
+              <p class="text-base font-sans text-dark-200">
+                We’re using cutting edge technology to drive accessible urban
+                transportation forward. Our fully electric scooters are a joy to
+                ride!
+              </p>
             </div>
-
-            <div class="mt-8">
-              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
-                Our tech
-              </h4>
-
-              <div>
-                <p class="text-base font-sans text-dark-200">
-                  We’re using cutting edge technology to drive accessible urban
-                  transportation forward. Our fully electric scooters are a joy
-                  to ride!
-                </p>
-              </div>
-            </div>
-          </li>
-
-          <li class="flex flex-col items-center justify-center max-w-[350px]">
-            <div class="relative py-16">
-              <picture
-                class="block max-w-[240px] aspect-square overflow-hidden rounded-full"
-              >
-                <img
-                  class="w-full object-cover"
-                  src="/assets/images/our-community.jpg"
-                  alt=""
-                />
-              </picture>
-
-              <span
-                class="absolute bottom-2 left-1/2 flex items-center justify-center w-24 h-24 p-7 bg-primary-100 text-2xl font-mono font-bold text-secondary-100 rounded-full overflow-hidden -translate-x-1/2"
-              >
-                03
-              </span>
-            </div>
-
-            <div class="mt-8">
-              <h4 class="mb-7 text-dark-100 text-2xl font-mono font-bold">
-                Our tech
-              </h4>
-
-              <div>
-                <p class="text-base font-sans text-dark-200">
-                  We’re using cutting edge technology to drive accessible urban
-                  transportation forward. Our fully electric scooters are a joy
-                  to ride!
-                </p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </article>
-    </BaseContainer>
-  </section>
+          </div>
+        </li>
+      </ul>
+    </article>
+  </BaseContainer>
 
   <!-- FQAS -->
-  <section>
-    <BaseContainer>
-      <article>
-        <article class="py-16 text-center">
-          <header class="mb-12">
-            <h2 class="text-dark-100 text-5xl font-mono font-bold">FAQs</h2>
-          </header>
-        </article>
+  <BaseContainer>
+    <article>
+      <article class="py-16 px-5 text-center">
+        <header class="mb-12">
+          <h2 class="text-dark-100 text-5xl font-mono font-bold">FAQs</h2>
+        </header>
+
+        <div
+          class="group-faqs grid grid-cols-3 gap-8 items-start justify-between"
+        >
+          <Typography as="h2" variant="h3" color="dark100">
+            How it works
+          </Typography>
+
+          <div class="col-span-2 flex flex-col gap-4">
+            <article class="px-10 py-8 bg-[#F2F5F9]">
+              <header class="flex items-center justify-between gap-x-5 gap-y-2">
+                <Typography as="h4" variant="h4" color="dark100">
+                  How do I download the app?
+                </Typography>
+
+                <button>
+                  <span class="w-full max-w-max max-h-2 text-primary-100"
+                    ><Chevron /></span
+                  >
+                </button>
+              </header>
+
+              <div class="mt-6" data-content="001">
+                <div class="text-left">
+                  <Typography as="p" variant="body" color="dark100">
+                    To download the Scoot app, you can search “Scoot” in both
+                    the App and Google Play stores. An even simpler way to do it
+                    would be to click the relevant link at the bottom of this
+                    page and you’ll be re-directed to the correct page.
+                  </Typography>
+                </div>
+              </div>
+            </article>
+
+            <article class="px-10 py-8 bg-[#F2F5F9]">
+              <header class="flex items-center justify-between gap-x-5 gap-y-2">
+                <Typography as="h4" variant="h4" color="dark100">
+                  Can I find a nearby Scoots?
+                </Typography>
+
+                <div class="w-full max-w-max max-h-2 text-primary-100">
+                  <span><Chevron /></span>
+                </div>
+              </header>
+            </article>
+
+            <article class="px-10 py-8 bg-[#F2F5F9]">
+              <header class="flex items-center justify-between gap-x-5 gap-y-2">
+                <Typography as="h4" variant="h4" color="dark100">
+                  Do I need a license to ride?
+                </Typography>
+
+                <div class="w-full max-w-max max-h-2 text-primary-100">
+                  <span><Chevron /></span>
+                </div>
+              </header>
+            </article>
+          </div>
+        </div>
       </article>
-    </BaseContainer>
-  </section>
+    </article>
+  </BaseContainer>
 </Layout>
