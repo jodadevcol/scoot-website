@@ -1,0 +1,52 @@
+---
+import Apple from "../components/icons/Apple.astro";
+import GooglePlay from "../components/icons/GooglePlay.astro";
+import Typography from "../components/Typography.astro";
+import BaseContainer from "./BaseContainer.astro";
+---
+
+<footer>
+  <BaseContainer>
+    <article
+      class="footer-top grid grid-cols-2 items-center justify-between gap-x-5 py-24 px-5 bg-dark-100"
+    >
+      <header>
+        <Typography as="h2" variant="h2" color="white">
+          Sign up and <br /> Scoot off today
+        </Typography>
+      </header>
+
+      <div class="flex items-center justify-end gap-x-4 w-full">
+        <a
+          href="#"
+          class="flex items-center justify-center gap-x-2 w-full max-w-max px-4 py-3 rounded text-dark-100 bg-[#E5ECF4]"
+        >
+          <div>
+            <span><Apple /></span>
+          </div>
+
+          <div class="flex flex-col font-mono text-xl font-bold">
+            <span class="text-[10px] leading-none">Available on the</span>
+            AppStore
+          </div>
+        </a>
+
+        <a
+          href="#"
+          class="flex items-center justify-center gap-x-2 w-full max-w-max px-4 py-3 rounded text-dark-100 bg-[#E5ECF4]"
+        >
+          <div>
+            <span><GooglePlay /></span>
+          </div>
+
+          <div class="flex flex-col font-mono text-xl font-bold">
+            <span class="text-[10px] leading-none">Get it on</span>
+            GooglePlay
+          </div>
+        </a>
+      </div>
+    </article>
+  </BaseContainer>
+
+  <article class="footer-bottom px-5 py-8 bg-[#333A44]"></article>
+</footer>
