@@ -1,17 +1,17 @@
 ---
-import "@fontsource-variable/lexend-deca";
-import "@fontsource/space-mono/400.css";
-import "@fontsource/space-mono/700.css";
+import "@fontsource-variable/lexend-deca"
+import "@fontsource/space-mono/400.css"
+import "@fontsource/space-mono/700.css"
 
 // import Footer from "../sections/Footer.astro";
-import Header from "../sections/Header.astro";
-import Footer from "../sections/Footer.astro";
+import Footer from "../sections/Footer.astro"
+import Header from "../sections/Header.astro"
 
 interface Props {
-	title: string;
+	title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
@@ -25,12 +25,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body
-		class="overflow-x-hidden selection:bg-p-midnight-green selection:text-white [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-p-midnight-green"
+		class="selection:bg-p-midnight-green [&_:focus-visible]:ring-p-midnight-green overflow-x-hidden selection:text-white [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2"
 	>
 		<Header />
 
 		<div
-			class="mx-auto min-h-screen selection:bg-p-midnight-green selection:text-s-dark-green"
+			class="selection:bg-p-midnight-green selection:text-s-dark-green mx-auto min-h-screen"
 			id="main-content"
 		>
 			<main class="overflow-x-hidden">

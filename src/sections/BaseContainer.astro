@@ -1,15 +1,15 @@
 ---
 interface Props {
-  sectionClass?: string;
+	sectionClass?: string
 }
 
-const { sectionClass } = Astro.props;
+const { sectionClass } = Astro.props
 ---
 
 <section class={`relative ${sectionClass}`}>
-  <div class="relative max-w-6xl mx-auto">
-    <slot />
-  </div>
+	<div class="relative mx-auto max-w-6xl">
+		<slot />
+	</div>
 
-  <slot name="decotations" />
+	<slot name="decotations" />
 </section>

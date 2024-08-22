@@ -1,23 +1,23 @@
 ---
 interface Props {
-  numberOvals?: number;
+	numberOvals?: number
 }
 
-const { numberOvals } = Astro.props;
-const timesOvals = numberOvals === undefined ? 3 : numberOvals;
+const { numberOvals } = Astro.props
+const timesOvals = numberOvals === undefined ? 3 : numberOvals
 ---
 
-<div class="absolute top-0 bottom-0 -right-8 w-auto z-10 pointer-events-none">
-  <div class="flex items-center justify-center gap-x-4 h-full">
-    {
-      Array.from({ length: timesOvals }).map((_, index) => (
-        <span
-          class:list={[
-            "block w-16 h-16 rounded-full border-4 border-white ",
-            (index + 1) % 3 === 0 ? "bg-white" : "bg-transparent",
-          ]}
-        />
-      ))
-    }
-  </div>
+<div class="pointer-events-none absolute -right-8 bottom-0 top-0 z-10 w-auto">
+	<div class="flex h-full items-center justify-center gap-x-4">
+		{
+			Array.from({ length: timesOvals }).map((_, index) => (
+				<span
+					class:list={[
+						"block h-16 w-16 rounded-full border-4 border-white",
+						(index + 1) % 3 === 0 ? "bg-white" : "bg-transparent",
+					]}
+				/>
+			))
+		}
+	</div>
 </div>
