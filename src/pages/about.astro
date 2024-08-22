@@ -221,13 +221,19 @@ import Chevron from "../components/icons/Chevron.astro";
         </header>
 
         <div
-          class="group-faqs grid grid-cols-3 gap-8 items-start justify-between"
+          class="group-faqs grid gap-8 items-start justify-between"
+          style="grid-template-columns: minmax(240px, 350px) 1fr;"
         >
-          <Typography as="h2" variant="h3" color="dark100">
+          <Typography
+            as="h2"
+            variant="h3"
+            color="dark100"
+            class="w-full max-w-[350px]"
+          >
             How it works
           </Typography>
 
-          <div class="col-span-2 flex flex-col gap-4">
+          <div class="flex flex-col gap-4 w-full max-w-[730px] ml-auto">
             <article class="px-10 py-8 bg-[#F2F5F9]">
               <header class="flex items-center justify-between gap-x-5 gap-y-2">
                 <Typography as="h4" variant="h4" color="dark100">
