@@ -1,11 +1,11 @@
 ---
-import Hero from "../components/Hero.astro";
-import HeroOvals from "../components/HeroOvals.astro";
-import HeroPicture from "../components/HeroPicture.astro";
-import Typography from "../components/Typography.astro";
-import Layout from "../layouts/Layout.astro";
-import BaseContainer from "../sections/BaseContainer.astro";
-import Chevron from "../components/icons/Chevron.astro";
+import Hero from "@/components/Hero.astro";
+import HeroOvals from "@/components/HeroOvals.astro";
+import HeroPicture from "@/components/HeroPicture.astro";
+import Typography from "@/components/Typography.astro";
+import Layout from "@/layouts/Layout.astro";
+import BaseContainer from "@/sections/BaseContainer.astro";
+import Chevron from "@/components/icons/Chevron.astro";
 ---
 
 <Layout title="About">
@@ -21,8 +21,8 @@ import Chevron from "../components/icons/Chevron.astro";
 
   <!-- List Benefits -->
   <BaseContainer>
-    <article class="py-16 px-5">
-      <ul class="flex flex-col gap-y-32">
+    <article class="px-5 py-16">
+      <ul class="gap-y-32 flex flex-col">
         <li>
           <article class="flex items-center justify-between">
             <header class="max-w-[445px]">

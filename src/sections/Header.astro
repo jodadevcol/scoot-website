@@ -1,6 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import Logo from "../components/icons/Logo.astro";
+import MenuItemsList from "../components/MenuItemsList.astro";
 ---
 
 <header class="relative">
@@ -11,25 +12,7 @@ import Logo from "../components/icons/Logo.astro";
       <Logo />
     </a>
 
-    <nav>
-      <ul class="flex items-center justify-start gap-x-8 text-dark-200">
-        <li class="">
-          <a href="#" class="">
-            <span class="font-mono font-bold">About</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="">
-            <span class="font-mono font-bold">Location</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="">
-            <span class="font-mono font-bold">Carriers</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <MenuItemsList />
 
     <Button>Get Scootin</Button>
   </div>
