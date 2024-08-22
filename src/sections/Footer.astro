@@ -1,10 +1,9 @@
 ---
-import Apple from "../components/icons/Apple.astro"
-import Facebook from "../components/icons/Facebook.astro"
-import GooglePlay from "../components/icons/GooglePlay.astro"
-import Instagram from "../components/icons/Instagram.astro"
+import CardsApp from "@/components/CardsApp.astro"
+import HeroOvals from "@/components/HeroOvals.astro"
+import MenuItemsList from "@/components/MenuItemsList.astro"
+import SocialMediaList from "@/components/SocialMediaList.astro"
 import Logo from "../components/icons/Logo.astro"
-import Twitter from "../components/icons/Twitter.astro"
 import Typography from "../components/Typography.astro"
 import BaseContainer from "./BaseContainer.astro"
 ---
@@ -20,50 +19,9 @@ import BaseContainer from "./BaseContainer.astro"
 				</Typography>
 			</header>
 
-			<div class="flex w-full items-center justify-end gap-x-4">
-				<a
-					href="#"
-					class="flex w-full max-w-max items-center justify-center gap-x-2 rounded bg-[#E5ECF4] px-4 py-3 text-dark-100"
-				>
-					<div>
-						<span><Apple /></span>
-					</div>
+			<CardsApp />
 
-					<div class="flex flex-col font-mono text-xl font-bold">
-						<span class="text-[10px] leading-none">Available on the</span>
-						AppStore
-					</div>
-				</a>
-
-				<a
-					href="#"
-					class="flex w-full max-w-max items-center justify-center gap-x-2 rounded bg-[#E5ECF4] px-4 py-3 text-dark-100"
-				>
-					<div>
-						<span><GooglePlay /></span>
-					</div>
-
-					<div class="flex flex-col font-mono text-xl font-bold">
-						<span class="text-[10px] leading-none">Get it on</span>
-						GooglePlay
-					</div>
-				</a>
-			</div>
-
-			<div class="pointer-events-none absolute -bottom-44 -right-44 -z-10 w-auto">
-				<div class="flex h-full items-center justify-center gap-x-4 opacity-10">
-					{
-						Array.from({ length: 3 }).map((_, index) => (
-							<span
-								class:list={[
-									"block h-[348px] w-[348px] rounded-full border-[15px] border-white",
-									(index + 1) % 3 === 0 ? "bg-white" : "bg-transparent",
-								]}
-							/>
-						))
-					}
-				</div>
-			</div>
+			<HeroOvals size="large" opacity={true} position="footer" />
 		</article>
 	</BaseContainer>
 
@@ -74,44 +32,10 @@ import BaseContainer from "./BaseContainer.astro"
 					<Logo class="w-full" />
 				</a>
 
-				<nav>
-					<ul class="flex items-center justify-start gap-x-8 text-dark-200">
-						<li class="">
-							<a href="#" class="">
-								<span class="font-mono font-bold">About</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="">
-								<span class="font-mono font-bold">Location</span>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="">
-								<span class="font-mono font-bold">Carriers</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
+				<MenuItemsList />
 			</div>
 
-			<ul class="flex items-center justify-end gap-x-6 gap-y-2">
-				<li class="w-full max-w-6">
-					<a href="#" class="text-primary-100">
-						<span><Facebook /></span>
-					</a>
-				</li>
-				<li class="w-full max-w-6">
-					<a href="#" class="text-primary-100">
-						<span><Twitter /></span>
-					</a>
-				</li>
-				<li class="w-full max-w-6">
-					<a href="#" class="text-primary-100">
-						<span><Instagram /></span>
-					</a>
-				</li>
-			</ul>
+			<SocialMediaList />
 		</article>
 	</BaseContainer>
 </footer>

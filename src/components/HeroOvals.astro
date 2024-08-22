@@ -1,19 +1,37 @@
 ---
 interface Props {
 	numberOvals?: number
+	size: "small" | "medium" | "large"
+	opacity?: boolean
+	position: "hero" | "footer"
 }
 
-const { numberOvals } = Astro.props
+const SIZE_VALUES = {
+	small: "h-16 w-16 border-4",
+	medium: "h-32 w-32 border-[8px]",
+	large: "h-[348px] w-[348px] border-[15px]",
+}
+
+const POSITIONS_VALUES = {
+	hero: "-right-8 bottom-0 top-0",
+	footer: "-bottom-44 -right-44",
+}
+
+const { numberOvals, size, opacity, position } = Astro.props
 const timesOvals = numberOvals === undefined ? 3 : numberOvals
+
+const classPosition = POSITIONS_VALUES[position]
+const classSizeOvals = SIZE_VALUES[size]
 ---
 
-<div class="pointer-events-none absolute -right-8 bottom-0 top-0 z-10 w-auto">
-	<div class="flex h-full items-center justify-center gap-x-4">
+<div class:list={["pointer-events-none absolute z-0 w-auto", classPosition]}>
+	<div class:list={["flex h-full items-center justify-center gap-x-4", opacity && "opacity-10"]}>
 		{
 			Array.from({ length: timesOvals }).map((_, index) => (
 				<span
 					class:list={[
-						"block h-16 w-16 rounded-full border-4 border-white",
+						"block rounded-full border-white",
+						classSizeOvals,
 						(index + 1) % 3 === 0 ? "bg-white" : "bg-transparent",
 					]}
 				/>

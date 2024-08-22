@@ -7,7 +7,7 @@ const { src, ...props } = Astro.props
 ---
 
 <div
-	class="pointer-events-none absolute inset-0 z-0 bg-repeat-x"
+	class="pointer-events-none absolute inset-0 -z-10 bg-repeat-x"
 	style={`
     background-image: url('${src}'); 
     background-size: contain;
@@ -15,4 +15,4 @@ const { src, ...props } = Astro.props
 	{...props}
 >
 </div>
-<div class="absolute inset-0 z-0 bg-secondary-100/75"></div>
+<div class="absolute inset-0 -z-10 bg-secondary-100/75"></div>
