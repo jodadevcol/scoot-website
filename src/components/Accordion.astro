@@ -1,0 +1,65 @@
+---
+import Chevron from "@/components/icons/Chevron.astro"
+import Typography from "./Typography.astro"
+---
+
+<article class="px-5 py-16 text-center">
+	<header class="mb-12">
+		<h2 class="font-mono text-5xl font-bold text-dark-100">FAQs</h2>
+	</header>
+
+	<div
+		class="group-faqs grid items-start justify-between gap-8"
+		style="grid-template-columns: minmax(240px, 350px) 1fr;"
+	>
+		<Typography as="h2" variant="h3" color="dark100" class="w-full max-w-[350px]">
+			How it works
+		</Typography>
+
+		<div class="ml-auto flex w-full max-w-[730px] flex-col gap-4">
+			<article class="bg-[#F2F5F9] px-10 py-8">
+				<header class="flex items-center justify-between gap-x-5 gap-y-2">
+					<Typography as="h4" variant="h4" color="dark100"> How do I download the app? </Typography>
+
+					<button>
+						<span class="max-h-2 w-full max-w-max text-primary-100"><Chevron /></span>
+					</button>
+				</header>
+
+				<div class="mt-6" data-content="001">
+					<div class="text-left">
+						<Typography as="p" variant="body" color="dark100">
+							To download the Scoot app, you can search “Scoot” in both the App and Google Play
+							stores. An even simpler way to do it would be to click the relevant link at the bottom
+							of this page and you’ll be re-directed to the correct page.
+						</Typography>
+					</div>
+				</div>
+			</article>
+
+			<article class="bg-[#F2F5F9] px-10 py-8">
+				<header class="flex items-center justify-between gap-x-5 gap-y-2">
+					<Typography as="h4" variant="h4" color="dark100">
+						Can I find a nearby Scoots?
+					</Typography>
+
+					<div class="max-h-2 w-full max-w-max text-primary-100">
+						<span><Chevron /></span>
+					</div>
+				</header>
+			</article>
+
+			<article class="bg-[#F2F5F9] px-10 py-8">
+				<header class="flex items-center justify-between gap-x-5 gap-y-2">
+					<Typography as="h4" variant="h4" color="dark100">
+						Do I need a license to ride?
+					</Typography>
+
+					<div class="max-h-2 w-full max-w-max text-primary-100">
+						<span><Chevron /></span>
+					</div>
+				</header>
+			</article>
+		</div>
+	</div>
+</article>
