@@ -1,16 +1,18 @@
 ---
 interface Props {
 	src: string
+	position?: "left" | "right" | "center"
 }
 
-const { src, ...props } = Astro.props
+const { src, position, ...props } = Astro.props
 ---
 
 <div
 	class="pointer-events-none absolute inset-0 -z-10 bg-repeat-x"
 	style={`
     background-image: url('${src}'); 
-    background-size: contain;
+    background-size: cover;
+		background-position: ${position};
   `}
 	{...props}
 >

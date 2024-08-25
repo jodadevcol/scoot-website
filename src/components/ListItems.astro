@@ -1,24 +1,19 @@
 ---
+import { PATH_TO_IMAGES } from "@/const/global"
+import type { ListOfItems } from "@/types/Global"
+import Typography from "./Typography.astro"
+
 interface Props {
-	benefits: {
-		id: string
-		title: string
-		description: string
-		image: {
-			webp: string
-			jpg: string
-		}
-	}[]
+	listOfItems: ListOfItems[]
 }
 
-const { benefits } = Astro.props
-const PATH_TO_IMAGES = "/assets/images/"
+const { listOfItems } = Astro.props
 ---
 
 <article class="px-5 py-16">
 	<ul class="flex flex-col gap-y-32">
 		{
-			benefits.map(({ id, title, description, image }, index) => {
+			listOfItems.map(({ id, title, description, image }, index) => {
 				return (
 					<li data-benefit={`${id}`}>
 						<article
@@ -28,12 +23,14 @@ const PATH_TO_IMAGES = "/assets/images/"
 							]}
 						>
 							<header class="max-w-[445px]">
-								<h2 class="mb-6 font-mono text-5xl font-bold tracking-tighter text-dark-100">
+								<Typography as="h2" variant="h2" color="dark100" class="mb-6">
 									{title}
-								</h2>
+								</Typography>
 
 								<div>
-									<p class="font-sans text-base text-dark-200">{description}</p>
+									<Typography as="p" variant="body" color="dark200">
+										{description}
+									</Typography>
 								</div>
 							</header>
 

@@ -1,38 +1,32 @@
 ---
 import FeaturedValues from "@/components/FeaturedValues.astro"
-import GroupAccordion from "@/components/GroupAccordion.astro"
 import Hero from "@/components/Hero.astro"
 import HeroOvals from "@/components/HeroOvals.astro"
 import HeroPicture from "@/components/HeroPicture.astro"
 import ListItems from "@/components/ListItems.astro"
-import { BENEFITS_DATA, FAQS_DATA, OUR_VALUES_DATA } from "@/data/about.data.ts"
+import { CARE_OUR_MISSION_DATA, WHY_JOIN_US_DATA } from "@/data/careers.data"
 import Layout from "@/layouts/Layout.astro"
 import BaseContainer from "@/sections/BaseContainer.astro"
 ---
 
-<Layout title="About">
+<Layout title="Careers">
 	<!-- Hero -->
 	<BaseContainer>
-		<Hero title="About" />
+		<Hero title="Careers" />
 
 		<div slot="decotations">
 			<HeroOvals size="small" position="hero" />
-			<HeroPicture src="/assets/images/hero/design-system-hero-desktop.png" />
+			<HeroPicture position="left" src="/assets/images/hero/careers-locations-hero-desktop.jpg" />
 		</div>
 	</BaseContainer>
 
-	<!-- List Benefits -->
+	<!-- List Careers -->
 	<BaseContainer>
-		<ListItems listOfItems={BENEFITS_DATA} />
+		<ListItems listOfItems={CARE_OUR_MISSION_DATA} />
 	</BaseContainer>
 
-	<!-- Our values -->
+	<!-- Why join us -->
 	<BaseContainer>
-		<FeaturedValues featuredItems={OUR_VALUES_DATA} />
-	</BaseContainer>
-
-	<!-- FQAS -->
-	<BaseContainer>
-		<GroupAccordion accordions={FAQS_DATA} />
+		<FeaturedValues featuredItems={WHY_JOIN_US_DATA} />
 	</BaseContainer>
 </Layout>
