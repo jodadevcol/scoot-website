@@ -30,3 +30,10 @@ export interface GroupAccordion {
 	groupTitle: string
 	groupAccordions: Accordion[]
 }
+
+export interface Card {
+	id: string
+	title: string
+	location: string
+	link: string
+}

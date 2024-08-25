@@ -3,15 +3,16 @@ import FeaturedValues from "@/components/FeaturedValues.astro"
 import Hero from "@/components/Hero.astro"
 import HeroOvals from "@/components/HeroOvals.astro"
 import HeroPicture from "@/components/HeroPicture.astro"
+import ListCards from "@/components/ListCards.astro"
 import ListItems from "@/components/ListItems.astro"
-import { CARE_OUR_MISSION_DATA, WHY_JOIN_US_DATA } from "@/data/careers.data"
+import { CARE_OUR_MISSION_DATA, OPEN_POSITIONS_DATA, WHY_JOIN_US_DATA } from "@/data/careers.data"
 import Layout from "@/layouts/Layout.astro"
 import BaseContainer from "@/sections/BaseContainer.astro"
 ---
 
 <Layout title="Careers">
 	<!-- Hero -->
-	<BaseContainer>
+	<BaseContainer sectionClass="mb-16">
 		<Hero title="Careers" />
 
 		<div slot="decotations">
@@ -28,5 +29,10 @@ import BaseContainer from "@/sections/BaseContainer.astro"
 	<!-- Why join us -->
 	<BaseContainer>
 		<FeaturedValues featuredItems={WHY_JOIN_US_DATA} />
+	</BaseContainer>
+
+	<!-- Careers -->
+	<BaseContainer>
+		<ListCards items={OPEN_POSITIONS_DATA} />
 	</BaseContainer>
 </Layout>

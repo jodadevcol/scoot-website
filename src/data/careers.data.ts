@@ -1,4 +1,4 @@
-import { type FeaturedValues, type ListOfItems } from "@/types/Global"
+import { type Card, type FeaturedValues, type ListOfItems } from "@/types/Global"
 
 export const CARE_OUR_MISSION_DATA: ListOfItems[] = [
 	{
@@ -46,5 +46,44 @@ export const WHY_JOIN_US_DATA: FeaturedValues[] = [
 			webp: "",
 			jpg: "our-community.jpg",
 		},
+	},
+]
+
+export const OPEN_POSITIONS_DATA: Card[] = [
+	{
+		id: "1",
+		title: "General Manager",
+		location: "Jakarta, Indonesia",
+		link: "/careers/full-stack-developer",
+	},
+	{
+		id: "2",
+		title: "UI/UX Designer",
+		location: "Yokohama, Japan",
+		link: "/careers/front-end-developer",
+	},
+	{
+		id: "3",
+		title: "Blog Content Copywriter",
+		location: "New York, United States",
+		link: "/careers/ux-designer",
+	},
+	{
+		id: "4",
+		title: "Graphic Designer",
+		location: "New York, United States",
+		link: "/careers/customer-support",
+	},
+	{
+		id: "5",
+		title: "Fleet Supervisor",
+		location: "Jakarta, Indonesia",
+		link: "/careers/customer-support",
+	},
+	{
+		id: "6",
+		title: "UX Analyst",
+		location: "London, United Kingdom",
+		link: "/careers/customer-support",
 	},
 ]
