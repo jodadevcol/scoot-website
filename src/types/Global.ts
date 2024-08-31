@@ -1,10 +1,29 @@
 export interface ListOfItems {
+	items: ItemOfList[]
+}
+
+export interface HighlightItems {
+	items: HighlightItem[]
+}
+
+export interface HighlightItem {
+	id: string
+	title: string
+	description: string
+	icon: string
+}
+
+export interface ItemOfList {
 	id: string
 	title: string
 	description: string
 	image: {
 		webp: string
 		jpg: string
+	}
+	callToAction?: {
+		label?: string
+		link: string
 	}
 }
 
