@@ -1,9 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import HighlightItems from "@/components/HighlightItems.astro"
+import ListItems from "@/components/ListElements.astro"
+import { FEATURED_SCOOT_DATA, POINTS_SCOOT_DATA } from "@/data/index.data.ts"
+import Layout from "@/layouts/Layout.astro"
+import BaseContainer from "@/sections/BaseContainer.astro"
 ---
 
 <Layout title="Home Scoot">
-	<section class="relative">
+	<section class="relative mb-40">
 		<article class="mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-10 py-5">
 			<header class="mb-10 max-w-[500px]">
 				<h1 class="text-6xl font-bold text-white">Scooter sharing made simple</h1>
@@ -31,4 +35,14 @@ import Layout from "../layouts/Layout.astro"
 		</div>
 		<div class="absolute inset-0 -z-10 bg-secondary-100/75"></div>
 	</section>
+
+	<!-- Featured -->
+	<BaseContainer sectionClass="mb-24">
+		<HighlightItems itemsOfList={FEATURED_SCOOT_DATA} />
+	</BaseContainer>
+
+	<!-- List Points -->
+	<BaseContainer>
+		<ListItems itemsOfList={POINTS_SCOOT_DATA} />
+	</BaseContainer>
 </Layout>

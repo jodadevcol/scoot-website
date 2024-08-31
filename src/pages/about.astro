@@ -4,7 +4,7 @@ import GroupAccordion from "@/components/GroupAccordion.astro"
 import Hero from "@/components/Hero.astro"
 import HeroOvals from "@/components/HeroOvals.astro"
 import HeroPicture from "@/components/HeroPicture.astro"
-import ListItems from "@/components/ListItems.astro"
+import ListElements from "@/components/ListElements.astro"
 import { BENEFITS_DATA, FAQS_DATA, OUR_VALUES_DATA } from "@/data/about.data.ts"
 import Layout from "@/layouts/Layout.astro"
 import BaseContainer from "@/sections/BaseContainer.astro"
@@ -23,7 +23,7 @@ import BaseContainer from "@/sections/BaseContainer.astro"
 
 	<!-- List Benefits -->
 	<BaseContainer>
-		<ListItems listOfItems={BENEFITS_DATA} />
+		<ListElements itemsOfList={BENEFITS_DATA} />
 	</BaseContainer>
 
 	<!-- Our values -->
