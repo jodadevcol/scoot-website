@@ -1,0 +1,36 @@
+---
+import type { HighlightItem } from "@/types/Global"
+import Typography from "./Typography.astro"
+
+interface Props {
+	item: HighlightItem
+	order: number
+}
+
+const { item, order } = Astro.props
+if (item === undefined) throw new Error("Item is required")
+
+const { id, title, description, icon } = item
+
+// const ICONS: any = {
+// 	locate: LocateIcon,
+// 	ride: RideIcon,
+// 	scooter: ScooterIcon,
+// }
+---
+
+<li class="relative w-full max-w-max">
+	<div class="absolute right-full top-10 -z-10 h-4 w-full bg-light-100"></div>
+
+	<div class="max-w-[350px]">
+		<div class="mb-10 aspect-square w-24 overflow-hidden rounded-full bg-primary-100"></div>
+
+		<div>
+			<Typography as="h2" variant="h4" color="dark100" class="mb-6">{title}</Typography>
+
+			<div class="text-left">
+				<Typography as="p" variant="body" color="dark200">{description}</Typography>
+			</div>
+		</div>
+	</div>
+</li>
