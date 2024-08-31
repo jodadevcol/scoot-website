@@ -1,17 +1,19 @@
 import { type Card, type FeaturedValues, type ListOfItems } from "@/types/Global"
 
-export const CARE_OUR_MISSION_DATA: ListOfItems[] = [
-	{
-		id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
-		title: "Care to join our mission?",
-		description:
-			"We’re always looking for ambitious individuals to help us on our journey. If you’re passionate about our mission to provide clean, accessible transport to improve urban living we want to hear from you!",
-		image: {
-			webp: "",
-			jpg: "join-us.jpg",
+export const CARE_OUR_MISSION_DATA: ListOfItems = {
+	items: [
+		{
+			id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
+			title: "Care to join our mission?",
+			description:
+				"We’re always looking for ambitious individuals to help us on our journey. If you’re passionate about our mission to provide clean, accessible transport to improve urban living we want to hear from you!",
+			image: {
+				webp: "",
+				jpg: "join-us.jpg",
+			},
 		},
-	},
-]
+	],
+}
 
 export const WHY_JOIN_US_DATA: FeaturedValues[] = [
 	{

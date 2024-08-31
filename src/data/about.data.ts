@@ -1,27 +1,29 @@
 import { type FeaturedValues, type GroupAccordion, type ListOfItems } from "@/types/Global"
 
-export const BENEFITS_DATA: ListOfItems[] = [
-	{
-		id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
-		title: "Mobility for the digital era",
-		description:
-			"Getting around should be simple (and even fun!) for everyone. We embrace technology to provide low cost, smart access to scooters at your fingertips.",
-		image: {
-			webp: "",
-			jpg: "digital-era.jpg",
+export const BENEFITS_DATA: ListOfItems = {
+	items: [
+		{
+			id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
+			title: "Mobility for the digital era",
+			description:
+				"Getting around should be simple (and even fun!) for everyone. We embrace technology to provide low cost, smart access to scooters at your fingertips.",
+			image: {
+				webp: "",
+				jpg: "digital-era.jpg",
+			},
 		},
-	},
-	{
-		id: "29b8abb7-ef5b-4b0c-9f38-cc9bbad0e930",
-		title: "Better urban living",
-		description:
-			"We’re helping connect cities and bring people closer together. Our scooters are also fully-electric and we offset the minimal carbon footprint for each ride",
-		image: {
-			webp: "",
-			jpg: "better-living.jpg",
+		{
+			id: "29b8abb7-ef5b-4b0c-9f38-cc9bbad0e930",
+			title: "Better urban living",
+			description:
+				"We’re helping connect cities and bring people closer together. Our scooters are also fully-electric and we offset the minimal carbon footprint for each ride",
+			image: {
+				webp: "",
+				jpg: "better-living.jpg",
+			},
 		},
-	},
-]
+	],
+}
 
 export const OUR_VALUES_DATA: FeaturedValues[] = [
 	{
