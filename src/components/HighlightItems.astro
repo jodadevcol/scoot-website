@@ -1,0 +1,23 @@
+---
+import ElementOfHighlight from "@/components/ElementOfHighlight.astro"
+import type { HighlightItem, HighlightItems } from "@/types/Global"
+
+interface Props {
+	itemsOfList: HighlightItems
+}
+
+const { itemsOfList } = Astro.props
+if (itemsOfList?.items === undefined) throw new Error("No items provided")
+
+const { items } = itemsOfList
+---
+
+<article class="px-5 py-16">
+	<ul class="flex gap-x-8">
+		{
+			items.map((items: HighlightItem, index: number) => (
+				<ElementOfHighlight item={items} order={index} />
+			))
+		}
+	</ul>
+</article>

@@ -1,0 +1,19 @@
+---
+import type { ItemOfList, ListOfItems } from "@/types/Global"
+import ElementOfList from "./ElementOfList.astro"
+
+interface Props {
+	itemsOfList: ListOfItems
+}
+
+const { itemsOfList } = Astro.props
+if (itemsOfList?.items === undefined) throw new Error("List of items is required")
+
+const { items } = itemsOfList
+---
+
+<article class="px-5 py-16">
+	<ul class="flex flex-col gap-y-32">
+		{items.map((items: ItemOfList, index: number) => <ElementOfList item={items} order={index} />)}
+	</ul>
+</article>
