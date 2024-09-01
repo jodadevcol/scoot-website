@@ -1,0 +1,24 @@
+---
+import Button from "./Button.astro"
+import Typography from "./Typography.astro"
+---
+
+<article class="z-20 flex min-h-[80vh] flex-col justify-center px-10 py-5">
+	<header class="mb-10 max-w-[500px] text-white">
+		<div class="title-intro-page">
+			<Typography as="h1" variant="h1" color="white">Scooter sharing made simple</Typography>
+		</div>
+	</header>
+
+	<div class="max-w-[500px] md:ml-16 lg:ml-24">
+		<div class="mb-10">
+			<Typography as="p" variant="body" color="white">
+				Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient locations
+				in each of our cities. Use our app to locate the nearest bike, unlock it with a tap, and
+				you’re away!
+			</Typography>
+		</div>
+
+		<Button>Get Scootin</Button>
+	</div>
+</article>
