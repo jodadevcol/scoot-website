@@ -8,10 +8,20 @@ const { href, ...props } = Astro.props
 
 <a
 	href={href}
-	class="flex max-w-max items-center justify-center bg-primary-100 px-10 py-3"
+	class="group relative block max-w-max cursor-pointer overflow-hidden border-[3px] border-primary-100 px-10 py-3"
 	{...props}
 >
-	<span class="font-mono font-bold text-white">
-		<slot />
-	</span>
+	<div class="flex items-center justify-center">
+		<span
+			class="z-10 font-mono font-bold text-white transition-colors group-hover:text-primary-100"
+		>
+			<slot />
+		</span>
+		<span
+			class="absolute inset-0 z-0 origin-left translate-x-0 bg-primary-100 transition-transform duration-300 group-hover:-translate-x-full"
+		></span>
+		<span
+			class="absolute inset-0 z-0 origin-left translate-x-full bg-transparent transition-transform duration-300 group-hover:translate-x-0"
+		></span>
+	</div>
 </a>
