@@ -1,0 +1,35 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Astronaut from "@/icons/Astronaut.astro"
+import Home from "@/icons/Home.astro"
+import Link from "@/components/Link.astro"
+import BaseContainer from "@/sections/BaseContainer.astro"
+---
+
+<Layout title="404 Page not found | Details country | Countries API">
+	<BaseContainer>
+		<article class="flex flex-wrap items-center justify-between gap-x-8 lg:flex-nowrap min-h-screen">
+			<div class="w-3/5">
+				<span class="block aspect-square max-w-full max-h-[670px]">
+					<Astronaut />
+				</span>
+			</div>
+			<div class="w-2/5 text-dark-100">
+				<h1 class="mb-2 text-8xl font-bold">404</h1>
+				<h2 class="mb-5 text-5xl font-semibold">UH OH! You're lost.</h2>
+				<div class="mb-8">
+					<p class="text-dark-200"
+					>The page you are looking for does not exist. How you got here is a mystery. But you can
+					click the button below to go back to the homepage.
+				</p>
+				</div>
+
+				<Link href="/" icon={true} >
+					<Home slot="icon" />
+
+					Home
+				</Link>
+			</div>
+		</article>
+	</BaseContainer>
+</Layout>
