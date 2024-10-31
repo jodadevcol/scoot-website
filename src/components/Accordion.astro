@@ -15,21 +15,21 @@ const { id, question, answer } = accordion
 ---
 
 <article
-	class="bg-[#F2F5F9] px-10 py-8"
+	class="relative bg-[#F2F5F9] px-10 py-8 transition-colors duration-300 ease-in-out hover:bg-[#FFF4DF] [&.active]:delay-300 [&.active]:hover:bg-[#FFF4DF]/60 group"
 	data-accordion={id}
 	data-group={numberGroup}
 	data-sort-accordion={numberAccordion}
 >
-	<header class="flex items-center justify-between gap-x-5 gap-y-2">
+<button class="absolute inset-0"><span class="hidden invisible"></span></button>
+
+	<header class=" flex items-center justify-between gap-x-5 gap-y-2">
 		<Typography as="h4" variant="h4" color="dark100">
 			{question}
 		</Typography>
 
-		<button>
-			<span class="max-h-2 w-full max-w-max text-primary-100">
-				<Chevron />
-			</span>
-		</button>
+		<span class="group-[.active]:-scale-y-100 transition-transform duration-300 ease-linear max-h-2 w-full max-w-max text-primary-100">
+			<Chevron />
+		</span>
 	</header>
 
 	<div
