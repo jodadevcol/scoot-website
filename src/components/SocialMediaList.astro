@@ -1,14 +1,17 @@
 ---
-import Facebook from "./icons/Facebook.astro"
-import Instagram from "./icons/Instagram.astro"
-import Twitter from "./icons/Twitter.astro"
+import Facebook from "@/icons/Facebook.astro"
+import Instagram from "@/icons/Instagram.astro"
+import Twitter from "@/icons/Twitter.astro"
+
 ---
 
 <ul class="flex items-center justify-end gap-x-6 gap-y-2">
 	<li class="w-full max-w-6">
 		<a
 			href="#"
+			aria-label="Link to Facebook page of Scoot"
 			class="cursor-pointer text-primary-100 transition-colors duration-200 hover:text-white"
+			target="_blank"
 		>
 			<span><Facebook /></span>
 		</a>
@@ -16,7 +19,9 @@ import Twitter from "./icons/Twitter.astro"
 	<li class="w-full max-w-6">
 		<a
 			href="#"
+			aria-label="Link to Twitter page of Scoot"
 			class="cursor-pointer text-primary-100 transition-colors duration-200 hover:text-white"
+			target="_blank"
 		>
 			<span><Twitter /></span>
 		</a>
@@ -24,7 +29,9 @@ import Twitter from "./icons/Twitter.astro"
 	<li class="w-full max-w-6">
 		<a
 			href="#"
+			aria-label="Link to Instagram page of Scoot"
 			class="cursor-pointer text-primary-100 transition-colors duration-200 hover:text-white"
+			target="_blank"
 		>
 			<span><Instagram /></span>
 		</a>
