@@ -7,21 +7,21 @@ export const FEATURED_SCOOT_DATA: HighlightItems = {
 			title: "Locate with app",
 			description:
 				"Use the app to find the nearest scooter to you. We are continuously placing scooters in the areas with most demand, so one should never be too far away.",
-			icon: "locate",
+			icon: "Locate",
 		},
 		{
 			id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
 			title: "Pick your scooter",
 			description:
 				"We show the most important info for the scooters closest to you. So you know how much charge they have left and can see roughly how much it will cost.",
-			icon: "locate",
+			icon: "Scooter",
 		},
 		{
 			id: "6f42a58b-b027-4115-8399-c3b0e4f611fe",
 			title: "Enjoy the ride",
 			description:
 				"Scan the QR code and the bike will unlock. Retract the cable lock, put on a helmet, and you’re off! Always lock bikes away from walkways and accessibility ramps.",
-			icon: "locate",
+			icon: "Ride",
 		},
 	],
 }
