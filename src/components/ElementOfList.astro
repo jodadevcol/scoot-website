@@ -1,8 +1,9 @@
 ---
 import { PATH_TO_IMAGES } from "@/const/global"
 import type { ItemOfList } from "@/types/Global"
-import Button from "./Button.astro"
+import Link from "./Link.astro"
 import Typography from "./Typography.astro"
+import IconArrowList from "@/icons/ArrowList.astro"
 
 interface Props {
 	item: ItemOfList
@@ -36,7 +37,7 @@ const { id, title, description, image, callToAction } = item
 			{
 				callToAction?.link && (
 					<div class="mt-10 flex items-center justify-start">
-						<Button href={callToAction?.link}>{callToAction?.label}</Button>
+						<Link href={callToAction?.link}>{callToAction?.label}</Link>
 					</div>
 				)
 			}
@@ -66,6 +67,29 @@ const { id, title, description, image, callToAction } = item
 				]}
 			>
 			</div>
+
+			{
+				order === 0 ? (
+					<div
+						class:list={[
+							"absolute left-24 bottom-0  h-36 w-full max-w-none text-primary-100 -translate-x-1/2"
+						]}
+					>
+						<IconArrowList />
+					</div>
+				) : (
+					<div
+						class:list={[
+							"absolute h-36 w-full max-w-none text-primary-100",
+							order % 2 === 0
+								? "left-8 top-20 translate-x-1/2"
+								: "right-8 top-0 -translate-x-1/2 -scale-x-100",
+						]}
+					>
+						<IconArrowList />
+					</div>
+				)
+			}
 		</picture>
 	</article>
 </li>

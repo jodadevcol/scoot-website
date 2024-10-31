@@ -12,18 +12,25 @@ if (item === undefined) throw new Error("Item is required")
 
 const { id, title, description, icon } = item
 
-// const ICONS: any = {
-// 	locate: LocateIcon,
-// 	ride: RideIcon,
-// 	scooter: ScooterIcon,
-// }
+const IconModule = await import(`../icons/${icon}.astro`);
+const Icon = IconModule.default;
 ---
 
-<li class="relative w-full max-w-max">
-	<div class="absolute right-full top-10 -z-10 h-4 w-full bg-light-100"></div>
+<li class="relative w-full max-w-max" data-element={id}>
+	<div class="absolute right-full top-10 -z-10 h-4 w-full lg:w-[calc(100%+300px)] bg-light-100"></div>
 
 	<div class="max-w-[350px]">
-		<div class="mb-10 aspect-square w-24 overflow-hidden rounded-full bg-primary-100"></div>
+		{
+			IconModule && (
+				<div class="mb-10 aspect-square w-24 overflow-hidden rounded-full ">
+					<div class="size-full bg-primary-100 flex items-center justify-center">
+						<span class="block size-full max-w-11 max-h-10 [&>svg]:size-full">
+							<Icon />
+						</span>
+					</div>
+				</div>
+			)
+		}
 
 		<div>
 			<Typography as="h2" variant="h4" color="dark100" class="mb-6">{title}</Typography>
