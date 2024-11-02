@@ -25,15 +25,15 @@ const { title } = Astro.props
 		<title>{title}</title>
 	</head>
 	<body
-		class="selection:bg-p-midnight-green [&_:focus-visible]:ring-p-midnight-green overflow-x-hidden selection:text-white [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2"
+		class="[&_:focus-visible]:ring-p-midnight-green overflow-x-hidden [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2"
 	>
 		<Header />
 
 		<div
-			class="selection:bg-p-midnight-green selection:text-s-dark-green mx-auto min-h-screen"
+			class="mx-auto min-h-screen"
 			id="main-content"
 		>
-			<main class="overflow-x-hidden">
+			<main>
 				<slot />
 			</main>
 		</div>
