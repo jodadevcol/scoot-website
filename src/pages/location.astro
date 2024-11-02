@@ -1,0 +1,128 @@
+---
+import Hero from "@/components/Hero.astro"
+import HeroOvals from "@/components/HeroOvals.astro"
+import HeroPicture from "@/components/HeroPicture.astro"
+import Link from "@/components/Link.astro"
+import Typography from "@/components/Typography.astro"
+import Layout from "@/layouts/Layout.astro"
+import BaseContainer from "@/sections/BaseContainer.astro"
+---
+
+<Layout title="Location">
+	<!-- Hero -->
+	<BaseContainer sectionClass="mb-16">
+		<Hero title="Locations" />
+
+		<div slot="decotations">
+			<HeroOvals size="small" position="hero" />
+			<HeroPicture position="left" src="/assets/images/hero/careers-locations-hero-desktop.jpg" />
+		</div>
+	</BaseContainer>
+
+	<!-- Word Map -->
+	<BaseContainer sectionClass="py-16">
+		<article class="flex flex-col gap-y-28">
+			<div class="h-[540px] w-full">
+				<img
+					id="world-map"
+					src="/assets/images/world-map-desktop.png"
+					alt="The Scream"
+					class="h-0 w-0 hidden invisible"
+				/>
+				<canvas class="mx-auto w-auto" width="1110" height="540" data-canvas="world-map"></canvas>
+			</div>
+
+			<footer class="flex items-center justify-start gap-x-8">
+				<div class="max-w-[350px] flex-1">
+					<Typography as="h2" variant="h2" color="dark100"> Your City Not Listed? </Typography>
+				</div>
+
+				<div class="max-w-[490px] flex-1">
+					<Typography as="p" variant="p" color="dark200">
+						If you’d like to see Scoot in your hometown, be sure to let us <br /> know. We track requests
+						and plan launches based on <br /> demand. Feel free to message us by clicking the link or
+						<br /> messaging us on social.
+					</Typography>
+				</div>
+
+				<div class="ml-auto">
+					<Link> Message Us </Link>
+				</div>
+			</footer>
+		</article>
+	</BaseContainer>
+</Layout>
+
+<script>
+import { Image } from "astro:assets"
+
+	const canvas = document.querySelector('[data-canvas="world-map"]') as HTMLCanvasElement
+	const ctx = canvas?.getContext("2d") as CanvasRenderingContext2D
+	const image = document.getElementById("world-map") as HTMLImageElement
+
+	const pathWidth = 189
+	const pathHeight = 176 // 88
+
+	const PATH_FLAG = new Path2D("M189 0H0V72H78L94 88L110 72H189V0Z")
+	const LOCATIONS_FLAGS = [
+		{
+			name: "New York",
+			x: 241,
+			y: 166,
+		},
+		{
+			name: "London",
+			x: 489,
+			y: 106,
+		},
+		{
+			name: "Yokohama",
+			x: 950,
+			y: 164,
+		},
+		{
+			name: "Jakarta",
+			x: 878,
+			y: 338,
+		},
+	]
+	
+	function drawImage() {
+		ctx?.drawImage(image, 0, 0, canvas.width, canvas.height)
+
+		drawFlags()
+	}
+
+	function drawFlags() {
+		LOCATIONS_FLAGS.forEach(({ x, y, name }) => drawFlag({ x, y, name }))
+	}
+
+	function drawFlag({ x, y, name }: { x: number; y: number , name:string }) {
+		ctx.save()
+		// PATH
+		ctx.beginPath()
+		ctx.translate(x - pathWidth / 2, y - pathHeight / 2)
+		ctx.fillStyle = "#fcb72b"
+		ctx.fill(PATH_FLAG)
+
+		// TEXT
+		ctx.fillStyle = "#495567"
+		ctx.font = "bold 24px 'Space Mono'"
+		ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+		ctx.fillText(name, pathWidth / 2 , pathHeight / 4.5);
+
+		ctx.closePath()
+
+		ctx.restore()
+	}
+
+	// canvas.addEventListener("click", (event) => {
+	// 	const rect = canvas.getBoundingClientRect()
+	// 	const x = event.clientX - rect.left
+	// 	const y = event.clientY - rect.top
+	// 	console.log("Coordenadas del clic:", x, y)
+	// })
+
+	drawImage()
+</script>
