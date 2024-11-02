@@ -48,36 +48,57 @@ const { accordions } = Astro.props
 </article>
 
 <script>
+	import { $ } from "@/lib/dom.ts"
+
 	function runAccordion() {
 		const accordions = document.querySelectorAll(
 			"[data-accordion][data-group]"
 		) as NodeListOf<HTMLElement>
 
-		accordions.forEach((accordion) => {
+		accordions.forEach((accordion, index) => {
 			const { group, sortAccordion } = accordion.dataset
 
+			const firstContent = $(`[data-content="${group}-${sortAccordion}"]`, accordion)
+			if (index === 0 && firstContent) setActiveAccordion({ accordion, content: firstContent })
+
 			accordion.querySelector("button")?.addEventListener("click", () => {
-				const content = accordion.querySelector(
-					`[data-content="${group}-${sortAccordion}"]`
-				) as HTMLElement
+				const content = $(`[data-content="${group}-${sortAccordion}"]`, accordion)
 
 				if (!content) return
 
-				if (!accordion.classList.contains("active")) {
-					accordion.classList.add("active")
-
-					content.classList.remove("hidden")
-					content.style.maxHeight = `${content.scrollHeight}px`
-				} else {
-					accordion.classList.remove("active")
-
-					content.style.maxHeight = ""
-					setTimeout(() => {
-						content.classList.add("hidden")
-					}, 300)
-				}
+				if (!accordion.classList.contains("active")) setActiveAccordion({ accordion, content })
+				else setDesactiveAccordion({ accordion, content })
 			})
 		})
+	}
+
+	function setActiveAccordion({
+		accordion,
+		content,
+	}: {
+		accordion: HTMLElement
+		content: HTMLElement
+	}) {
+		accordion.classList.add("active")
+
+		
+		content.classList.remove("hidden")
+		content.style.maxHeight = `${content.scrollHeight}px`
+	}
+
+	function setDesactiveAccordion({
+		accordion,
+		content,
+	}: {
+		accordion: HTMLElement
+		content: HTMLElement
+	}) {
+		accordion.classList.remove("active")
+
+		content.style.maxHeight = ""
+		setTimeout(() => {
+			content.classList.add("hidden")
+		}, 300)
 	}
 
 	runAccordion()
