@@ -3,7 +3,7 @@ import Link from "./Link.astro"
 import Typography from "./Typography.astro"
 ---
 
-<article class="z-20 flex min-h-[80vh] flex-col justify-center px-10 py-5">
+<article class="relative z-20 flex min-h-[80vh] flex-col justify-center px-10 py-5">
 	<header class="mb-10 max-w-[500px] text-white">
 		<div class="title-intro-page">
 			<Typography as="h1" variant="h1" color="white">Scooter sharing made simple</Typography>
@@ -11,12 +11,49 @@ import Typography from "./Typography.astro"
 	</header>
 
 	<div class="max-w-[500px] md:ml-16 lg:ml-24">
-		<div class="mb-10">
+		<div class="relative mb-10">
+			<div class="absolute right-full top-1/2 -translate-x-14 -translate-y-1/2 text-primary-100">
+				<svg
+					width="203"
+					height="15"
+					viewBox="0 0 203 15"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path id="Path 2" d="M203 7.5H0.5" stroke="currentColor" stroke-width="15"></path>
+				</svg>
+			</div>
+
 			<Typography as="p" variant="body" color="white">
 				Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient locations
 				in each of our cities. Use our app to locate the nearest bike, unlock it with a tap, and
 				you’re away!
 			</Typography>
+
+			<div class="absolute left-full top-1/2 -translate-y-3 translate-x-10 text-primary-100">
+				<svg
+					width="452"
+					height="151"
+					viewBox="0 0 452 151"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<g id="Group 8 Copy">
+						<path
+							id="Path 3"
+							d="M407.952 145.444L446.378 107.018L407.952 68.5916"
+							stroke="currentColor"
+							stroke-width="15"
+							stroke-linejoin="bevel"></path>
+						<path
+							id="Path 4"
+							d="M0 8H270.115V107.369H446.378"
+							stroke="currentColor"
+							stroke-width="15"
+							stroke-linejoin="bevel"></path>
+					</g>
+				</svg>
+			</div>
 		</div>
 
 		<Link>Get Scootin</Link>

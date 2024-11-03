@@ -3,7 +3,7 @@ interface Props {
 	numberOvals?: number
 	size: "small" | "medium" | "large"
 	opacity?: boolean
-	position: "hero" | "footer"
+	position: "hero-home" | "hero" | "footer"
 }
 
 const SIZE_VALUES = {
@@ -13,8 +13,9 @@ const SIZE_VALUES = {
 }
 
 const POSITIONS_VALUES = {
-	hero: "-right-8 bottom-0 top-0",
-	footer: "-bottom-44 -right-44",
+	"hero-home": "-right-10 bottom-0 top-0",
+	"hero": "-right-8 bottom-0 top-0",
+	"footer": "-bottom-44 -right-44",
 }
 
 const { numberOvals, size, opacity, position } = Astro.props
@@ -25,7 +26,16 @@ const classSizeOvals = SIZE_VALUES[size]
 ---
 
 <div class:list={["pointer-events-none absolute z-0 w-auto", classPosition]}>
-	<div class:list={["flex h-full items-center justify-center gap-x-4", opacity && "opacity-10"]}>
+	<div
+		class:list={[
+			"flex h-full justify-center gap-x-4",
+			opacity && "opacity-10",
+			{
+				"items-center": position !== "hero-home",
+			},
+			{ "items-end": position === "hero-home" },
+		]}
+	>
 		{
 			Array.from({ length: timesOvals }).map((_, index) => (
 				<span
@@ -33,6 +43,7 @@ const classSizeOvals = SIZE_VALUES[size]
 						"block rounded-full border-white",
 						classSizeOvals,
 						(index + 1) % 3 === 0 ? "bg-white" : "bg-transparent",
+						{ "-translate-y-[24vh]": position === "hero-home" },
 					]}
 				/>
 			))
