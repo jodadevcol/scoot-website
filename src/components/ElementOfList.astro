@@ -1,9 +1,9 @@
 ---
 import { PATH_TO_IMAGES } from "@/const/global"
+import IconArrowList from "@/icons/ArrowList.astro"
 import type { ItemOfList } from "@/types/Global"
 import Link from "./Link.astro"
 import Typography from "./Typography.astro"
-import IconArrowList from "@/icons/ArrowList.astro"
 
 interface Props {
 	item: ItemOfList
@@ -62,17 +62,22 @@ const { id, title, description, image, callToAction } = item
 
 			<div
 				class:list={[
-					"absolute bottom-0 top-0 aspect-square w-full overflow-hidden rounded-full bg-light-100",
+					"absolute bottom-0 top-0",
 					order % 2 === 0 ? "left-full lg:ml-12 xl:ml-16" : "right-full lg:mr-12 xl:mr-16",
 				]}
 			>
+				<div
+					class:list={[
+						"aspect-square size-full overflow-hidden rounded-full bg-gradient-to-r from-light-100 to-transparent to-60%",
+						order % 2 === 0 ? "scale-x-100" : "-scale-x-100",
+					]}></div>
 			</div>
 
 			{
 				order === 0 ? (
 					<div
 						class:list={[
-							"absolute left-24 bottom-0  h-36 w-full max-w-none text-primary-100 -translate-x-1/2"
+							"absolute bottom-0 left-24 h-36 w-full max-w-none -translate-x-1/2 text-primary-100",
 						]}
 					>
 						<IconArrowList />
