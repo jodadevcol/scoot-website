@@ -3,17 +3,17 @@ import CardsApp from "@/components/CardsApp.astro"
 import HeroOvals from "@/components/HeroOvals.astro"
 import MenuItemsList from "@/components/MenuItemsList.astro"
 import SocialMediaList from "@/components/SocialMediaList.astro"
-import Logo from "@/icons/Logo.astro"
 import Typography from "@/components/Typography.astro"
+import Logo from "@/icons/Logo.astro"
 import BaseContainer from "./BaseContainer.astro"
 ---
 
 <footer class="mt-16 overflow-hidden">
 	<BaseContainer sectionClass="bg-dark-100 z-0">
 		<article
-			class="footer-top relative grid grid-cols-2 items-center justify-between gap-x-5 py-24"
+			class="footer-top relative grid grid-rows-1 items-center justify-center gap-y-10 py-16 max-lg:text-center lg:grid-cols-2 lg:grid-rows-none lg:justify-between lg:gap-x-5 lg:gap-y-0 lg:py-24"
 		>
-			<header>
+			<header class="w-full">
 				<Typography as="h2" variant="h2" color="white">
 					Sign up and <br /> Scoot off today
 				</Typography>
@@ -28,7 +28,10 @@ import BaseContainer from "./BaseContainer.astro"
 	<BaseContainer sectionClass="bg-[#333A44] z-10">
 		<article class="footer-bottom flex items-center justify-between gap-x-5 gap-y-2 py-8">
 			<div class="flex items-center justify-start gap-14">
-				<a class="block w-full max-w-28 text-white transition-opacity duration-300 ease-out hover:opacity-70" href="/">
+				<a
+					class="block w-full max-w-28 text-white transition-opacity duration-300 ease-out hover:opacity-70"
+					href="/"
+				>
 					<Logo class="w-full" />
 				</a>
 
