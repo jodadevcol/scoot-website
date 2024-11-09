@@ -12,19 +12,23 @@ if (item === undefined) throw new Error("Item is required")
 
 const { id, title, description, icon } = item
 
-const IconModule = await import(`../icons/${icon}.astro`);
-const Icon = IconModule.default;
+const IconModule = await import(`../icons/${icon}.astro`)
+const Icon = IconModule.default
 ---
 
 <li class="relative w-full max-w-max" data-element={id}>
-	<div class="absolute right-full top-10 -z-10 h-4 w-full lg:w-[calc(100%+300px)] bg-light-100"></div>
+	<div
+		class="absolute bottom-full left-10 -z-10 h-[calc(100%+200px)] w-4 bg-light-100 lg:right-full lg:top-10 lg:h-4 lg:w-[calc(100%+400px)]"
+	></div>
 
-	<div class="max-w-[350px]">
+	<div
+		class="flex max-w-xl flex-row gap-x-10 gap-y-10 md:max-w-2xl md:gap-x-20 lg:max-w-[350px] lg:flex-col"
+	>
 		{
 			IconModule && (
-				<div class="mb-10 aspect-square w-24 overflow-hidden rounded-full ">
-					<div class="size-full bg-primary-100 flex items-center justify-center">
-						<span class="block size-full max-w-11 max-h-10 [&>svg]:size-full">
+				<div class="aspect-square size-full max-w-24 overflow-hidden rounded-full">
+					<div class="flex size-full items-center justify-center bg-primary-100">
+						<span class="block size-full max-h-10 max-w-11 [&>svg]:size-full">
 							<Icon />
 						</span>
 					</div>

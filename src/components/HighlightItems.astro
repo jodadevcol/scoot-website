@@ -12,8 +12,8 @@ if (itemsOfList?.items === undefined) throw new Error("No items provided")
 const { items } = itemsOfList
 ---
 
-<article class="px-5 py-16">
-	<ul class="flex gap-x-8">
+<article class="px-5 lg:py-16">
+	<ul class="flex flex-col items-center gap-x-8 gap-y-10 lg:flex-row lg:items-start">
 		{
 			items.map((items: HighlightItem, index: number) => (
 				<ElementOfHighlight item={items} order={index} />
