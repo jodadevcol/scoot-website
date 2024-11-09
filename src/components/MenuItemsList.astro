@@ -1,19 +1,22 @@
 ---
 const MENU_ITEMS = [
-{
+	{
 		id: 1,
-		title: 'About',
-		url: '/about',
+		title: "About",
+		url: "/about",
+		active: Astro.url.pathname === "/about",
 	},
 	{
 		id: 2,
-		title: 'Location',
-		url: '/location',
+		title: "Location",
+		url: "/location",
+		active: Astro.url.pathname === "/location",
 	},
 	{
 		id: 3,
-		title: 'Carriers',
-		url: '/careers',
+		title: "Carriers",
+		url: "/careers",
+		active: Astro.url.pathname === "/careers",
 	},
 ]
 ---
@@ -21,13 +24,24 @@ const MENU_ITEMS = [
 <nav>
 	<ul class="flex items-center justify-start gap-x-8 text-dark-200">
 		{
-			MENU_ITEMS.map(({id, title, url}) => {
+			MENU_ITEMS.map(({ id, title, url }) => {
+				const active = Astro.url.pathname === url
+
 				return (
-				<li class="" data-menu-item={id}>
-					<a href={url} class="transition-colors duration-300 ease-out hover:text-primary-100">
-						<span class="font-mono font-bold">{title}</span>
-					</a>
-				</li>
+					<li class="" data-menu-item={id}>
+						<a
+							href={url}
+							class:list={[
+								"transition-colors duration-300 ease-out",
+								{
+									"text-primary-100 hover:text-primary-100/50": active,
+									"hover:text-primary-100": !active,
+								},
+							]}
+						>
+							<span class="font-mono font-bold">{title}</span>
+						</a>
+					</li>
 				)
 			})
 		}
