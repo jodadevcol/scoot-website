@@ -1,18 +1,18 @@
 ---
 import Link from "@/components/Link.astro"
-import Logo from "@/icons/Logo.astro"
 import MenuItemsList from "@/components/MenuItemsList.astro"
+import Logo from "@/icons/Logo.astro"
 ---
 
 <header class="relative">
-	<div class="mx-auto flex max-w-7xl items-center justify-start gap-x-16 px-5 xl:px-10 py-6">
-		<a class="block w-full max-w-28 text-dark-100" href="/">
-			<Logo />
+	<div class="mx-auto flex max-w-7xl items-center justify-start gap-x-16 px-5 py-6 xl:px-10">
+		<a class="block max-h-5 w-full max-w-fit text-dark-100 lg:max-h-max lg:max-w-28" href="/">
+			<Logo class="h-5 lg:h-auto" />
 		</a>
 
 		<MenuItemsList />
 
-		<div class="ml-auto">
+		<div class="ml-auto hidden lg:block">
 			<Link>Get Scootin</Link>
 		</div>
 	</div>
