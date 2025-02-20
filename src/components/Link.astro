@@ -9,10 +9,15 @@ const { href, icon, ...props } = Astro.props
 
 <a
 	href={href}
-	class="group relative block max-w-max cursor-pointer overflow-hidden border-[3px] border-primary-100 px-10 py-3 h-[54px]"
+	class="group relative mx-auto block h-[54px] max-w-max cursor-pointer overflow-hidden border-[3px] border-primary-100 px-10 py-3 lg:mr-auto"
 	{...props}
 >
-	<div class:list={["text-white group-hover:text-primary-100 transition-colors", {"inline-flex items-center justify-around gap-x-3": icon}]}>
+	<div
+		class:list={[
+			"text-white transition-colors group-hover:text-primary-100",
+			{ "inline-flex items-center justify-around gap-x-3": icon },
+		]}
+	>
 		{
 			icon && (
 				<span class="z-10 size-5">
@@ -22,9 +27,7 @@ const { href, icon, ...props } = Astro.props
 		}
 
 		<div class="flex items-center justify-center">
-			<span
-				class="z-10 font-mono font-bold"
-			>
+			<span class="z-10 font-mono font-bold">
 				<slot />
 			</span>
 			<span

@@ -25,7 +25,7 @@ const classPosition = POSITIONS_VALUES[position]
 const classSizeOvals = SIZE_VALUES[size]
 ---
 
-<div class:list={["pointer-events-none absolute z-0 w-auto", classPosition]}>
+<div class:list={["sr-only pointer-events-none absolute z-0 w-auto lg:not-sr-only", classPosition]}>
 	<div
 		class:list={[
 			"flex h-full justify-center gap-x-4",

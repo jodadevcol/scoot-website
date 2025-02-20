@@ -3,16 +3,18 @@ import Link from "./Link.astro"
 import Typography from "./Typography.astro"
 ---
 
-<article class="relative z-20 flex min-h-[80vh] flex-col justify-center px-10 py-5">
+<article class="relative z-20 flex min-h-[80vh] flex-col justify-center py-5 lg:px-10">
 	<header class="mb-10 max-w-[500px] text-white">
-		<div class="title-intro-page">
+		<div class="title-intro-page text-center lg:text-left">
 			<Typography as="h1" variant="h1" color="white">Scooter sharing made simple</Typography>
 		</div>
 	</header>
 
-	<div class="max-w-[500px] md:ml-16 lg:ml-24">
+	<div class="max-w-[500px] text-center md:ml-16 lg:ml-24 lg:text-left">
 		<div class="relative mb-10">
-			<div class="absolute right-full top-1/2 -translate-x-14 -translate-y-1/2 text-primary-100">
+			<div
+				class="sr-only absolute right-full top-1/2 -translate-x-14 -translate-y-1/2 text-primary-100 lg:not-sr-only"
+			>
 				<svg
 					width="203"
 					height="15"
@@ -30,7 +32,9 @@ import Typography from "./Typography.astro"
 				you’re away!
 			</Typography>
 
-			<div class="absolute left-full top-1/2 -translate-y-3 translate-x-10 text-primary-100">
+			<div
+				class="sr-only absolute left-full top-1/2 -translate-y-3 translate-x-10 text-primary-100 lg:not-sr-only"
+			>
 				<svg
 					width="452"
 					height="151"

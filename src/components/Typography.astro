@@ -10,11 +10,11 @@ type Props<Tag extends HTMLTag> = Polymorphic<{
 const { as: Tag, class: className, variant, color, ...props } = Astro.props
 
 const variantClasess: { [key: string]: string } = {
-	h1: "text-6xl font-mono font-bold",
-	h2: "text-5xl font-mono font-bold",
-	h3: "text-4xl font-mono font-bold",
-	h4: "text-2xl font-mono font-bold",
-	body: "text-base font-sans",
+	h1: "text-4xl lg:text-6xl font-mono font-bold",
+	h2: "text-3xl lg:text-5xl font-mono font-bold",
+	h3: "text-2xl lg:text-4xl font-mono font-bold",
+	h4: "text-xl lg:text-2xl font-mono font-bold",
+	body: "text-sm md:text-base font-sans",
 }
 
 const colorClasess = {

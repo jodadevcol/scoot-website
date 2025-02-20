@@ -84,7 +84,7 @@ const { id, title, description, image, callToAction } = item
 				order === 0 ? (
 					<div
 						class:list={[
-							"absolute bottom-0 left-24 h-36 w-full max-w-none -translate-x-1/2 text-primary-100",
+							"absolute bottom-0 left-0 h-36 w-full max-w-none text-primary-100 lg:left-24 lg:-translate-x-1/2",
 						]}
 					>
 						<IconArrowList />
@@ -94,8 +94,8 @@ const { id, title, description, image, callToAction } = item
 						class:list={[
 							"absolute h-36 w-full max-w-none text-primary-100",
 							order % 2 === 0
-								? "left-8 top-20 translate-x-1/2"
-								: "right-8 top-0 -translate-x-1/2 -scale-x-100",
+								? "left-1/2 top-20 lg:left-8 lg:translate-x-1/2"
+								: "right-1/4 top-0 -scale-x-100 lg:right-8 lg:-translate-x-1/2",
 						]}
 					>
 						<IconArrowList />
