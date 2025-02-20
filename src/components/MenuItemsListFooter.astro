@@ -1,0 +1,49 @@
+---
+const MENU_ITEMS = [
+	{
+		id: 1,
+		title: "About",
+		url: "/about",
+		active: Astro.url.pathname === "/about",
+	},
+	{
+		id: 2,
+		title: "Location",
+		url: "/location",
+		active: Astro.url.pathname === "/location",
+	},
+	{
+		id: 3,
+		title: "Carriers",
+		url: "/careers",
+		active: Astro.url.pathname === "/careers",
+	},
+]
+---
+
+<nav class="block">
+	<ul class="flex flex-col lg:flex-row items-center justify-start gap-x-8 gap-y-4 lg:gap-y-0 text-dark-200">
+		{
+			MENU_ITEMS.map(({ id, title, url }) => {
+				const active = Astro.url.pathname === url
+
+				return (
+					<li class="" data-menu-item={id}>
+						<a
+							href={url}
+							class:list={[
+								"transition-colors duration-300 ease-out",
+								{
+									"text-primary-100 hover:text-primary-100/50": active,
+									"hover:text-primary-100": !active,
+								},
+							]}
+						>
+							<span class="font-mono font-bold">{title}</span>
+						</a>
+					</li>
+				)
+			})
+		}
+	</ul>
+</nav>
